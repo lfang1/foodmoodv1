@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package User;
-
+import java.util.ArrayList;
 /**
  *
  * @author siqitang
  */
 public class UserList {
-    
+    private ArrayList<User> UserList;
 }
