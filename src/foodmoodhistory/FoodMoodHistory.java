@@ -5,10 +5,25 @@
  */
 package foodmoodhistory;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Le
  */
 public class FoodMoodHistory {
     
+    private ArrayList<Food> myFoodList;
+    private ArrayList<Mood> myMoodList;
+    
+    /** 
+     * This is the default constructor.
+     */
+    public FoodMoodHistory(ArrayList<Food> foodList, ArrayList<Mood> moodList) {
+        
+        myFoodList = foodList;
+        myMoodList = moodList;
+                
+    }
+     
 }
