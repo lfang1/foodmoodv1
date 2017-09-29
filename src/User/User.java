@@ -10,7 +10,7 @@ package User;
  * @author siqitang
  */
 public class User {
-   private String username;
+    private String username;
     private String password;
     private double weight;
     private double height;

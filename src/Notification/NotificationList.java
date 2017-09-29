@@ -5,10 +5,11 @@
  */
 package Notification;
 
+import java.util.ArrayList;
 /**
  *
  * @author siqitang
  */
-public class NotificaionLsit {
-    
+public class NotificationList {
+    private ArrayList<Notification> NotificationList;
 }
