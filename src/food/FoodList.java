@@ -16,7 +16,7 @@ public class FoodList {
     private ArrayList<Food> FoodList;
     
     /**
-     * This is the default constructor for the FoodMoodEntryList class. This 
+     * This is the default constructor for the FoodList class. This 
      * class is a list where all the FoodMoodEntry logs are stored.
      */
     public FoodList () {
@@ -25,7 +25,7 @@ public class FoodList {
     
     /**
      * This method adds a user's log into the list of entries.
-     * @param entry the FoodMoodEntry to be added into the user's list.
+     * @param entry the Food to be added into the user's list.
      */
     public void addEntry(Food entry) {
         
@@ -57,6 +57,7 @@ public class FoodList {
      * toString() method in each individual entry)
      * @return a more readable view of the user's history of entries
      */
+    @Override
     public String toString () {
         String entryList = "";
         return entryList;

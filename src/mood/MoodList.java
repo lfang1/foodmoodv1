@@ -5,7 +5,6 @@
  */
 package mood;
 
-import food.Food;
 import java.util.ArrayList;
 
 /**
@@ -57,6 +56,7 @@ public class MoodList {
      * toString() method in each individual entry)
      * @return a more readable view of the user's history of entries
      */
+    @Override
     public String toString () {
         String entryList = "";
         return entryList;
