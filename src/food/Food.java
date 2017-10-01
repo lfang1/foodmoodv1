@@ -15,7 +15,6 @@ public class Food {
     
     private String foodType;
     private double calories;
-    private Date dateEaten;
     private int foodID;
     
     public Food () {
@@ -61,20 +60,6 @@ public class Food {
     public void setCalories(double calories) {
         this.calories = calories;
     }
-
-    /**
-     * @return the dateEaten
-     */
-    public Date getDateEaten() {
-        return dateEaten;
-    }
-
-    /**
-     * @param dateEaten the dateEaten to set
-     */
-    public void setDateEaten(Date dateEaten) {
-        this.dateEaten = dateEaten;
-    }
     
     /**
      * @return the foodID
@@ -90,7 +75,11 @@ public class Food {
         this.foodID = foodID;
     }
     
-    
+    @Override
+    public String toString () {
+        String entry = foodType + " | " + calories + " | " + foodID;
+        return entry;
+    }
 
     
 }

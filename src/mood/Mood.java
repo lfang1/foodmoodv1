@@ -74,5 +74,10 @@ public class Mood {
         this.moodID = moodID;
     }
     
+    @Override
+    public String toString() {
+        String entry = moodType + " | " + moodRating + " | " + moodID;
+        return entry;
+    }
     
 }

@@ -11,4 +11,7 @@ package UserProfileCntl;
  */
 public class UserProfileCntl {
     
+    public UserProfileCntl () {
+        
+    }
 }

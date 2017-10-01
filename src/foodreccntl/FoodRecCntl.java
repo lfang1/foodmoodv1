@@ -11,4 +11,7 @@ package foodreccntl;
  */
 public class FoodRecCntl {
     
+    public FoodRecCntl () {
+        
+    }
 }

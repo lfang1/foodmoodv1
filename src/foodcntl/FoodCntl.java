@@ -7,6 +7,7 @@ package foodcntl;
 
 import food.Food;
 import foodmoodstatscntl.FoodMoodStatsCntl;
+import foodview.FoodView;
 
 /**
  *
@@ -26,6 +27,7 @@ public class FoodCntl {
      */
     public FoodCntl (FoodMoodStatsCntl controller) {
         myController = controller;
+        FoodView view = new FoodView(this);
     }
     
     /**
@@ -39,17 +41,19 @@ public class FoodCntl {
     public FoodCntl (FoodMoodStatsCntl controller,Food theEntry) {
         myController = controller;
         entry = theEntry;
+        FoodView view = new FoodView(this, entry);
     }
     
     /**
      * This method will submit a Food with the information entered
      * into the view. The FoodMoodEntry will be added to the user's list or the 
      * local data's list of entries.
-     * @return the FoodMoodEntry to be added to the user's list
+     * @param foodType taken from views text box
+     * @param calories taken from views text box
      */
-    public Food submitEntry () {
-        Food newEntry = new Food();
-        return newEntry;
+    public void submitEntry (String foodType, double calories) {
+        Food newEntry = new Food(foodType, calories);
+        myController.getFoodMoodStats().getFoodList().addEntry(newEntry);
     }
     
     /**
@@ -57,6 +61,6 @@ public class FoodCntl {
      * back to the landing page.
      */
     public void cancelEntry () {
-        
+        System.out.println("Close FoodView and return to FoodMoodStatsView");
     }
 }

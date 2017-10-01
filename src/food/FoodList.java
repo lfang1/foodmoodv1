@@ -13,14 +13,14 @@ import java.util.ArrayList;
  */
 public class FoodList {
     
-    private ArrayList<Food> FoodList;
+    private ArrayList<Food> foodList;
     
     /**
      * This is the default constructor for the FoodList class. This 
      * class is a list where all the FoodMoodEntry logs are stored.
      */
     public FoodList () {
-        FoodList = new ArrayList<Food>();
+        foodList = new ArrayList<Food>();
     }
     
     /**
@@ -28,7 +28,14 @@ public class FoodList {
      * @param entry the Food to be added into the user's list.
      */
     public void addEntry(Food entry) {
-        
+        int index, lastEntryIndex;
+        if (foodList.get(0) == null) index = 1;
+        else {
+            lastEntryIndex = foodList.get(foodList.size()-1).getFoodID();
+            index = lastEntryIndex+1;
+        }
+        entry.setFoodID(index);
+        foodList.add(entry);
     }
     
     /**
@@ -39,7 +46,13 @@ public class FoodList {
      * @return The user entry that has been requested
      */
     public Food findEntry (int index) {
-        Food entry = new Food();
+        for (int i = 0; i < foodList.size(); i++) {
+            if (index == foodList.get(i).getFoodID()) {
+                index = foodList.get(i).getFoodID();
+                break;
+            }
+        }
+        Food entry = foodList.get(index);
         return entry;
     }
     
@@ -49,7 +62,7 @@ public class FoodList {
      * find a specific entry from the list.
      */
     public void deleteEntry (int index) {
-        
+        foodList.remove(index);
     }
     
     /**
@@ -60,6 +73,10 @@ public class FoodList {
     @Override
     public String toString () {
         String entryList = "";
+        for (int i = 0; i < foodList.size(); i++) {
+            entryList = foodList.get(i).toString() + "\n";
+        }
+        
         return entryList;
     }
     

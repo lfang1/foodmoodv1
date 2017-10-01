@@ -11,4 +11,7 @@ package notificationcntl;
  */
 public class NotificationCntl {
     
+    public NotificationCntl() {
+        
+    }
 }

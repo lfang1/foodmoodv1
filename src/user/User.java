@@ -3,18 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package User;
+package user;
+
+import foodmoodstats.FoodMoodStats;
 
 /**
  *
  * @author siqitang
  */
 public class User {
-   private String username;
+    private String username;
     private String password;
     private double weight;
     private double height;
     private int age;
+    private int userID;
+    private FoodMoodStats foodMoodEntries;
 
     /**
      * This is a constructor for UserProfileEntry. The user should enter a
@@ -113,5 +117,33 @@ public class User {
      */
     public void setAge(int age){
         this.age = age;
+    }
+
+    /**
+     * @return the userID
+     */
+    public int getUserID() {
+        return userID;
+    }
+
+    /**
+     * @param userID the userID to set
+     */
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    /**
+     * @return the foodMoodEntries
+     */
+    public FoodMoodStats getFoodMoodEntries() {
+        return foodMoodEntries;
+    }
+
+    /**
+     * @param foodMoodEntries the foodMoodEntries to set
+     */
+    public void setFoodMoodEntries(FoodMoodStats foodMoodEntries) {
+        this.foodMoodEntries = foodMoodEntries;
     }
 }
