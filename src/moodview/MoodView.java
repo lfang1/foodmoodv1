@@ -19,7 +19,7 @@ public class MoodView {
      * This is the default constructor for the MoodView. 
      */
     public MoodView () {
-
+        System.out.println("MoodView initialized");
     }
     
     /**
@@ -30,6 +30,7 @@ public class MoodView {
      * @param controller the parent controller (FoodCntl)
      */
     public MoodView (MoodCntl controller) {
+        System.out.println("MoodView initialized");
         myController = controller;
     }
     /**
@@ -42,6 +43,7 @@ public class MoodView {
      * @param theEntry the selected entry to update
      */
     public MoodView (MoodCntl controller,Mood theEntry) {
+        System.out.println("MoodView initialized");
         myController = controller;
         entry = theEntry;
     }

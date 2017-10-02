@@ -7,6 +7,7 @@ package moodcntl;
 
 import mood.Mood;
 import foodmoodstatscntl.FoodMoodStatsCntl;
+import moodview.MoodView;
 
 /**
  *
@@ -21,35 +22,42 @@ public class MoodCntl {
     /**
      * This is the default constructor for MoodCntl. This will 
      * initialize the MoodView and set the parent controller. This 
-     * constructor will handle the creation of a Food.
+     * constructor will handle the creation of a Mood.
      * @param controller the parent controller
      */
     public MoodCntl (FoodMoodStatsCntl controller) {
+        System.out.println("MoodCntl initialized");
         myController = controller;
+        MoodView view = new MoodView(this);
     }
     
     /**
      * This is a constructor for MoodCntl. This will initialize the 
      * MoodView,set the parent controller, and set the text fields 
      * of the view to match those already entered in the original entry. This 
-     * constructor will handle the updates of a Food.
+     * constructor will handle the updates of a Mood.
      * @param controller the parent controller
      * @param theEntry the original entry to be updated
      */
     public MoodCntl (FoodMoodStatsCntl controller,Mood theEntry) {
+        System.out.println("MoodCntl initialized");
         myController = controller;
         entry = theEntry;
+        MoodView view = new MoodView(this, entry);
     }
     
     /**
      * This method will submit a Mood with the information entered
-     * into the view. The Mood will be added to the user's list or the 
+     * into the view. The FoodMoodEntry will be added to the user's list or the 
      * local data's list of entries.
-     * @return the Mood to be added to the user's list
+     * @param moodType taken from views text box
+     * @param calories taken from views text box
      */
-    public Mood submitEntry () {
-        Mood newEntry = new Mood();
-        return newEntry;
+    public void submitEntry (String moodType, double calories) {
+        System.out.println("submitEntry went through");
+        Mood newEntry = new Mood(moodType, calories);
+        System.out.println("Entry to be added: " + newEntry.toString());
+        myController.getFoodMoodStats().getMoodList().addEntry(newEntry);
     }
     
     /**
@@ -57,6 +65,6 @@ public class MoodCntl {
      * back to the landing page.
      */
     public void cancelEntry () {
-        
+        System.out.println("Close MoodView and return to FoodMoodStatsView");
     }
 }

@@ -19,7 +19,7 @@ public class FoodView {
      * This is the default constructor for the FoodView. 
      */
     public FoodView () {
-
+        System.out.println("FoodView initialized");
     }
     
     /**
@@ -30,6 +30,7 @@ public class FoodView {
      * @param controller the parent controller (FoodCntl)
      */
     public FoodView (FoodCntl controller) {
+        System.out.println("FoodView initialized");
         myController = controller;
     }
     /**
@@ -42,6 +43,7 @@ public class FoodView {
      * @param theEntry the selected entry to update
      */
     public FoodView (FoodCntl controller,Food theEntry) {
+        System.out.println("FoodView initialized");
         myController = controller;
         entry = theEntry;
     }

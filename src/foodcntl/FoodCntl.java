@@ -26,6 +26,7 @@ public class FoodCntl {
      * @param controller the parent controller
      */
     public FoodCntl (FoodMoodStatsCntl controller) {
+        System.out.println("FoodCntl initialized");
         myController = controller;
         FoodView view = new FoodView(this);
     }
@@ -39,6 +40,7 @@ public class FoodCntl {
      * @param theEntry the original entry to be updated
      */
     public FoodCntl (FoodMoodStatsCntl controller,Food theEntry) {
+        System.out.println("FoodCntl initialized");
         myController = controller;
         entry = theEntry;
         FoodView view = new FoodView(this, entry);
@@ -52,7 +54,9 @@ public class FoodCntl {
      * @param calories taken from views text box
      */
     public void submitEntry (String foodType, double calories) {
+        System.out.println("submitEntry went through");
         Food newEntry = new Food(foodType, calories);
+        System.out.println("Entry to be added: " + newEntry.toString());
         myController.getFoodMoodStats().getFoodList().addEntry(newEntry);
     }
     

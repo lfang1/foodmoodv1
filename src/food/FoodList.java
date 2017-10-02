@@ -20,6 +20,7 @@ public class FoodList {
      * class is a list where all the FoodMoodEntry logs are stored.
      */
     public FoodList () {
+        System.out.println("FoodList initialized");
         foodList = new ArrayList<Food>();
     }
     
@@ -28,6 +29,7 @@ public class FoodList {
      * @param entry the Food to be added into the user's list.
      */
     public void addEntry(Food entry) {
+        System.out.println("addEntry went through");
         int index, lastEntryIndex;
         if (foodList.get(0) == null) index = 1;
         else {
@@ -36,6 +38,7 @@ public class FoodList {
         }
         entry.setFoodID(index);
         foodList.add(entry);
+        System.out.println("Food being added: " + foodList.toString());
     }
     
     /**
@@ -46,6 +49,7 @@ public class FoodList {
      * @return The user entry that has been requested
      */
     public Food findEntry (int index) {
+        System.out.println("findEntry went through");
         for (int i = 0; i < foodList.size(); i++) {
             if (index == foodList.get(i).getFoodID()) {
                 index = foodList.get(i).getFoodID();
@@ -53,6 +57,7 @@ public class FoodList {
             }
         }
         Food entry = foodList.get(index);
+        System.out.println("Entry is + " + entry.toString());
         return entry;
     }
     
@@ -62,7 +67,15 @@ public class FoodList {
      * find a specific entry from the list.
      */
     public void deleteEntry (int index) {
+        System.out.println("deleteEntry went through");
+        for (int i = 0; i < foodList.size(); i++) {
+            if (index == foodList.get(i).getFoodID()) {
+                index = foodList.get(i).getFoodID();
+                break;
+            }
+        }
         foodList.remove(index);
+        System.out.println(foodList.toString());
     }
     
     /**

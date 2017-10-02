@@ -19,6 +19,7 @@ public class MoodList {
      * class is a list where all the Mood logs are stored.
      */
     public MoodList () {
+        System.out.println("MoodList initialized");
         moodList = new ArrayList<Mood>();
     }
     
@@ -27,6 +28,7 @@ public class MoodList {
      * @param entry the FoodMoodEntry to be added into the user's list.
      */
     public void addEntry(Mood entry) {
+        System.out.println("addEntry went through");
         int index, lastEntryIndex;
         if (moodList.get(0) == null) index = 1;
         else {
@@ -35,6 +37,7 @@ public class MoodList {
         }
         entry.setMoodID(index);
         moodList.add(entry);
+        System.out.println("Food being added: " + moodList.toString());
     }
     
     /**
@@ -45,6 +48,7 @@ public class MoodList {
      * @return The user entry that has been requested
      */
     public Mood findEntry (int index) {
+        System.out.println("findEntry went through");
         for (int i = 0; i < moodList.size(); i++) {
             if (index == moodList.get(i).getMoodID()) {
                 index = moodList.get(i).getMoodID();
@@ -52,6 +56,7 @@ public class MoodList {
             }
         }
         Mood entry = moodList.get(index);
+        System.out.println("Entry is + " + entry.toString());
         return entry;
     }
     
@@ -61,7 +66,15 @@ public class MoodList {
      * find a specific entry from the list.
      */
     public void deleteEntry (int index) {
+        System.out.println("deleteEntry went through");
+        for (int i = 0; i < moodList.size(); i++) {
+            if (index == moodList.get(i).getMoodID()) {
+                index = moodList.get(i).getMoodID();
+                break;
+            }
+        }
         moodList.remove(index);
+        System.out.println(moodList.toString());
     }
     
     /**

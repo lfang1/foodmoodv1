@@ -10,5 +10,19 @@ package notificationview;
  * @author siqitang
  */
 public class NotificationView {
-    
+         
+    /**
+     * This is the default constructor
+     */
+    public NotificationView() {
+        
+    }
+ 
+    /**
+     * Initialize components in the NotificationViewUI.
+     */
+    public void initializeNotificationViewUI() {
+        
+    }
+
 }

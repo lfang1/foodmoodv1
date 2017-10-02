@@ -5,10 +5,20 @@
  */
 package foodrec;
 
+import foodmoodcorrelation.FoodMoodCorrelation;
+import java.util.ArrayList;
+
 /**
  *
  * @author siqitang
  */
 public class FoodRecList {
+    private ArrayList<FoodMoodCorrelation> arr;
     
+    /**
+     * This is the default constructor 
+     */
+    public FoodRecList () {
+        arr = new ArrayList<FoodMoodCorrelation>();
+    }
 }

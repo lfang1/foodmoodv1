@@ -5,13 +5,22 @@
  */
 package foodreccntl;
 
+import userprofilecntl.UserProfileCntl;
+import foodmoodcorrelation.FoodMoodCorrelation;
+import foodmoodstatscntl.FoodMoodStatsCntl;
+import foodrecview.FoodRecView;
+import user.*;
+
 /**
  *
  * @author siqitang
  */
 public class FoodRecCntl {
+    private FoodRecView view;
+    private FoodMoodCorrelation foodMoodCorrelation;
     
     public FoodRecCntl () {
-        
+        view = new FoodRecView(this);
     }
+    
 }

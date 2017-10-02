@@ -5,7 +5,7 @@
  */
 package foodmoodstatscntl;
 
-import UserProfileCntl.UserProfileCntl;
+import userprofilecntl.UserProfileCntl;
 import user.*;
 import foodmoodstats.FoodMoodStats;
 import food.Food;
@@ -35,10 +35,15 @@ public class FoodMoodStatsCntl {
      * profile and the date's entry list will be pulled by a private method.
      */
     public FoodMoodStatsCntl() {
-        if (user != null) 
+        System.out.println("FoodMoodStatsCntl initialized");
+        if (user != null) {
             foodMoodStats = user.getFoodMoodEntries();
-        else 
+            System.out.println("User recognized");
+            System.out.println(foodMoodStats.toString());
+        } else {
             foodMoodStats = new FoodMoodStats();
+            System.out.println("No User Recognized");
+        }
         view = new FoodMoodStatsView(this, foodMoodStats.getFoodList(), foodMoodStats.getMoodList());
     }
     
@@ -50,6 +55,7 @@ public class FoodMoodStatsCntl {
      */
     public void addFoodEntry () {
         FoodCntl foodCntl = new FoodCntl(this);
+        System.out.println("addFoodEntry method went through");
     }
     /**
      * This method will be activated after the user hits the corresponding 
@@ -61,6 +67,7 @@ public class FoodMoodStatsCntl {
     public void editFoodEntry(int index) {
         Food entry = foodMoodStats.getFoodList().findEntry(index);
         FoodCntl foodCntl = new FoodCntl(this, entry);
+        System.out.println("editFoodEntry method went through");
     }
     
     /**
@@ -71,6 +78,7 @@ public class FoodMoodStatsCntl {
      */
     public void deleteFoodEntry (int index) {
         foodMoodStats.getFoodList().deleteEntry(index);
+        System.out.println("deleteFoodEntry method went through");
     }
     
     /**
@@ -80,6 +88,7 @@ public class FoodMoodStatsCntl {
      */
     public void addMoodEntry () {
         MoodCntl moodCntl = new MoodCntl(this);
+        System.out.println("addMoodEntry method went through");
     }
     /**
      * This method will be activated after the user hits the corresponding 
@@ -91,6 +100,7 @@ public class FoodMoodStatsCntl {
     public void editMoodEntry(int index) {
         Mood entry = foodMoodStats.getMoodList().findEntry(index);
         MoodCntl moodCntl = new MoodCntl(this, entry);
+        System.out.println("editMoodEntry method went through");
     }
     
     /**
@@ -101,6 +111,7 @@ public class FoodMoodStatsCntl {
      */
     public void deleteMoodEntry (int index) {
         foodMoodStats.getMoodList().deleteEntry(index);
+        System.out.println("deleteMoodEntry method went through");
     }
     
     /**This method will be activated after the user hits the corresponding 
@@ -109,6 +120,7 @@ public class FoodMoodStatsCntl {
      */
     public void openNotifications () {
         NotificationCntl notificationCntl = new NotificationCntl();
+        System.out.println("openNotifications went through");
     }
     
     /**This method will be activated after the user hits the corresponding 
@@ -116,7 +128,8 @@ public class FoodMoodStatsCntl {
      * initialize the ProfileCntl.
      */
     public void openUserProfileSettings () {
-        UserProfileCntl userProfileCntl = new UserProfileCntl();
+        UserProfileCntl userProfileCntl = new UserProfileCntl(this);
+        System.out.println("openUserProfileSettings went through");
     }
     
     /**This method will be activated after the user hits the corresponding 
@@ -125,6 +138,7 @@ public class FoodMoodStatsCntl {
      */
     public void openFoodRecommendations () {
         FoodRecCntl foodRecCntl = new FoodRecCntl();
+        System.out.println("openFoodRecommendations went through");
         
     }
 

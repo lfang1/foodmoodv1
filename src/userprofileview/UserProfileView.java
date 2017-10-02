@@ -10,5 +10,17 @@ package userprofileview;
  * @author siqitang
  */
 public class UserProfileView {
-    
+    /**
+     * This is the default constructor
+     */
+    public UserProfileView() {
+        
+    }
+ 
+    /**
+     * Initialize components in the NotificationViewUI.
+     */
+    public void initializeUserProfileViewUI() {
+        
+    }
 }

@@ -5,7 +5,6 @@
  */
 package food;
 
-import java.util.Date;
 
 /**
  *
@@ -28,8 +27,10 @@ public class Food {
      * @param theCalories amount of calories in the food
      */
     public Food (String food, double theCalories){
+        System.out.println("Food initialized");
         foodType = food;
         calories = theCalories;
+        System.out.println(this.toString());
     }
     
     
